@@ -1,14 +1,16 @@
 environment:
   matrix:
-    - PYTHON_VERSION: "3.6"
-      PYTHON_ARCH: "64"
-      MINICONDA: C:\Miniconda3-x64
-      
-    - PYTHON_VERSION: "3.6"
-      PYTHON_ARCH: "32"
-      MINICONDA: C:\Miniconda3
-
-# platform: x64
+    - PYTHON: "C:\\Python27"
+    - PYTHON: "C:\\Python33"
+    - PYTHON: "C:\\Python34"
+    - PYTHON: "C:\\Python35"
+    - PYTHON: "C:\\Python27-x64"
+    - PYTHON: "C:\\Python33-x64"
+      DISTUTILS_USE_SDK: "1"
+    - PYTHON: "C:\\Python34-x64"
+      DISTUTILS_USE_SDK: "1"
+    - PYTHON: "C:\\Python35-x64"
+    - PYTHON: "C:\\Python36-x64"
 
 init:
   - ps: |
