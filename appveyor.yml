@@ -1,5 +1,4 @@
-image: 
-  - Visual Studio 2008
+image: Visual Studio 2008
 
 environment:
   matrix:
