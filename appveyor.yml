@@ -1,30 +1,34 @@
 environment:
   matrix:
-    - PYTHON_VERSION: "2.7"
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2008
+      PYTHON_VERSION: "2.7"
       PYTHON_ARCH: "64"
       MINICONDA: C:\Miniconda3-x64
-      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2008
+      
 
     # - PYTHON_VERSION: "2.7"
     #   PYTHON_ARCH: "32"
     #   MINICONDA: C:\Miniconda3
 
-    - PYTHON_VERSION: "3.3"
-      PYTHON_ARCH: "64"
-      MINICONDA: C:\Miniconda3-x64
-      DISTUTILS_USE_SDK: "1"
-      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2010
+    # - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2010
+    #   PYTHON_VERSION: "3.3"
+    #   PYTHON_ARCH: "64"
+    #   MINICONDA: C:\Miniconda3-x64
+    #   DISTUTILS_USE_SDK: "1"
+      
 
-    - PYTHON_VERSION: "3.3"
-      PYTHON_ARCH: "32"
-      MINICONDA: C:\Miniconda3
-      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2010
+    # - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2010
+    #   PYTHON_VERSION: "3.3"
+    #   PYTHON_ARCH: "32"
+    #   MINICONDA: C:\Miniconda3
+      
 
-    - PYTHON_VERSION: "3.4"
-      PYTHON_ARCH: "64"
-      MINICONDA: C:\Miniconda3-x64
-      DISTUTILS_USE_SDK: "1"
-      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2010
+    # - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2010
+    #   PYTHON_VERSION: "3.4"
+    #   PYTHON_ARCH: "64"
+    #   MINICONDA: C:\Miniconda3-x64
+    #   DISTUTILS_USE_SDK: "1"
+      
 
     # - PYTHON_VERSION: "3.4"
     #   PYTHON_ARCH: "32"
