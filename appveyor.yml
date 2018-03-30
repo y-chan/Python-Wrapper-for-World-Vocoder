@@ -26,7 +26,9 @@ init:
       $env:Path += ";$env:PYTHON_ROOT;$env:PYTHON_ROOT\Scripts"
 
 install:
-  - Start-FileDownload 'https://download.microsoft.com/download/7/9/6/796EF2E4-801B-4FC4-AB28-B59FBF6D907B/VCForPython27.msi'
+  - ps: |
+    Write-Output "Downloading Patch..."
+    Start-FileDownload 'https://download.microsoft.com/download/7/9/6/796EF2E4-801B-4FC4-AB28-B59FBF6D907B/VCForPython27.msi'
   - "cmd /c start /wait msiexec /i VCForPython27.msi /q"
   - "SET PATH=%MINICONDA%;%MINICONDA%\\Scripts;%PATH%"
   - conda config --set always_yes yes  --set changeps1 no
