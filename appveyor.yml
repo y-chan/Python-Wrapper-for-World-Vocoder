@@ -1,24 +1,24 @@
 environment:
   matrix:
-    - PYTHON_VERSION: "2.7"
+    # - PYTHON_VERSION: "2.7"
+    #   PYTHON_ARCH: "32"
+    #   MINICONDA: C:\Miniconda
+
+    - PYTHON_VERSION: "3.5"
+      PYTHON_ARCH: "64"
+      MINICONDA: C:\Miniconda3-x64
+
+    - PYTHON_VERSION: "3.5"
       PYTHON_ARCH: "32"
-      MINICONDA: C:\Miniconda
+      MINICONDA: C:\Miniconda3
 
-    # - PYTHON_VERSION: "3.5"
-    #   PYTHON_ARCH: "64"
-    #   MINICONDA: C:\Miniconda3-x64
+    - PYTHON_VERSION: "3.6"
+      PYTHON_ARCH: "64"
+      MINICONDA: C:\Miniconda3-x64
 
-    # - PYTHON_VERSION: "3.5"
-    #   PYTHON_ARCH: "32"
-    #   MINICONDA: C:\Miniconda3
-
-    # - PYTHON_VERSION: "3.6"
-    #   PYTHON_ARCH: "64"
-    #   MINICONDA: C:\Miniconda3-x64
-
-    # - PYTHON_VERSION: "3.6"
-    #   PYTHON_ARCH: "32"
-    #   MINICONDA: C:\Miniconda3
+    - PYTHON_VERSION: "3.6"
+      PYTHON_ARCH: "32"
+      MINICONDA: C:\Miniconda3
 
 init:
   - ps: |
@@ -26,10 +26,10 @@ init:
       $env:Path += ";$env:PYTHON_ROOT;$env:PYTHON_ROOT\Scripts"
 
 install:
-  - ps: |
-      Write-Output "Downloading Patch..."
-      Start-FileDownload "https://download.microsoft.com/download/7/9/6/796EF2E4-801B-4FC4-AB28-B59FBF6D907B/VCForPython27.msi"
-  - "cmd /c start /wait msiexec /i VCForPython27.msi /q"
+  # - ps: |
+  #     Write-Output "Downloading Patch..."
+  #     Start-FileDownload "https://download.microsoft.com/download/7/9/6/796EF2E4-801B-4FC4-AB28-B59FBF6D907B/VCForPython27.msi"
+  # - "cmd /c start /wait msiexec /i VCForPython27.msi /q"
   - "SET PATH=%MINICONDA%;%MINICONDA%\\Scripts;%PATH%"
   - conda config --set always_yes yes  --set changeps1 no
   - conda update -q conda
