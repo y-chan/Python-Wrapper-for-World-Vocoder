@@ -1,5 +1,6 @@
 environment:
-  password:
+  TWINE_USERNAME: JeremyCCHsu
+  TWINE_PASSWORD:
     secure: BWuqmwqNcXcnw186+V8rqA==
 
   matrix:
@@ -41,6 +42,7 @@ install:
   - "conda create -q -n test-environment python=%PYTHON_VERSION% numpy cython wheel"
   - activate test-environment
   - python -m pip install --no-cache-dir -U pip
+  - pip install twine
   - ps: |
       Write-Output "Installing requirements..."
       pip install -r requirements.txt
@@ -63,8 +65,8 @@ artifacts:
   - path: dist\*
 
 deploy_script:
-- "echo [pypi] > %USERPROFILE%\\.pypirc"
-- "echo username: jeremycchsu >> %USERPROFILE%\\.pypirc"
-- "echo password: %password% >> %USERPROFILE%\\.pypirc"
-- python setup.py sdist bdist_wheel upload
-
+# - "echo [pypi] > %USERPROFILE%\\.pypirc"
+# - "echo username: jeremycchsu >> %USERPROFILE%\\.pypirc"
+# - "echo password: %password% >> %USERPROFILE%\\.pypirc"
+# - python setup.py sdist bdist_wheel upload
+  - twine upload --repository-url https://test.pypi.org/legacy/ dist/*
