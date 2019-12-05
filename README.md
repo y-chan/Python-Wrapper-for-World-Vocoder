@@ -46,7 +46,7 @@ f0, sp, ap = pw.wav2world(x, fs)
 `pip install pyworld`  
 <br/>
 
-### Installing from Github
+### Installing from Source
 ```bash
 git clone https://github.com/JeremyCCHsu/Python-Wrapper-for-World-Vocoder.git
 cd Python-Wrapper-for-World-Vocoder
@@ -56,15 +56,17 @@ pip install -r requirements.txt
 pip install .
 ```
 It will automatically `git clone` Morise's World Vocoder (C++ version).<br/>
-(It seems to me that using `virtualenv` or `conda` is the best practice.)<br/>
 <br/>
+
 You can validate installation by running
 ```bash
 cd demo
 python demo.py
 ```
 to see if you get results in `test/` direcotry.
-(Please avoid writing and executing codes in the `Python-Wrapper-for-World-Vocoder` folder for now.)<br/>
+
+(If you install it from source, make sure you do execute `python` under `Python-Wrapper-for-World-Vocoder` folder.) 
+<br/>
 
 ### Other Installation Suggestions
 1. Use `pip install .` is safer and you can easily uninstall pyworld by `pip uninstall pyworld`
@@ -80,18 +82,17 @@ to see if you get results in `test/` direcotry.
   so that you can use it everywhere like an installed package.<br/>
   Alternatively you can copy/symlink the compiled files using pip, e.g. `pip install -e .`
 
-### Environment/Dependencies  
+## Environment/Dependencies  
 - Operating systems 
-  - Linux Ubuntu 16.04/14.04
+  - Linux Ubuntu 18.04/16.04/14.04
   - Windows (thanks to [wuaalb](https://github.com/wuaalb))
 - Python
   - 2.7 (Windows is currently not supported)
   - 3.7/3.6/3.5
   - Required packages
-    - Cython 0.24 (or later versions; required)
+    - Cython 0.24
     - Numpy
   - Optional (for demo.py only)
-    - argparse
     - pysoundfile
     - Matplotlib 
 
@@ -123,9 +124,6 @@ You can simply install these by `pip install -r requirements.txt`
      - scipy.io.wavfile.read (but this gives you `short`)
      - scipy.io.wavfile.write
 
-## TODO List
-
-- [ ] Realtime synthesizer
 
 ## Acknowledgement
 Thank all contributors ([tats-u](https://github.com/tats-u), [wuaalb](https://github.com/wuaalb), [r9y9](https://github.com/r9y9), [rikrd](https://github.com/rikrd), [kudan2510](https://github.com/kundan2510)) for making this repo better and [sotelo](https://github.com/sotelo) whose [world.py](https://github.com/sotelo/world.py) inspired this repo.<br/>
